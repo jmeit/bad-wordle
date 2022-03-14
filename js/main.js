@@ -13,11 +13,12 @@ document.addEventListener( 'DOMContentLoaded', function(){
                 document.getElementById('bad-word').value = badWords.length ? badWords.random() : "Two to Five letters, dumdum";
 
                 return false;
-            }
+            },
+            false
         );
 
     Array.prototype.random = function() {
         return this[Math.floor( Math.random() * ( this.length - 1 ) )];
     }          
 
-})();
+}, false );
