@@ -9,7 +9,7 @@ document.addEventListener( 'DOMContentLoaded', function(){
                 e.preventDefault();
 
                 const maxLength = document.getElementById('word-length').value;
-                const badWords = words.map( x=> (new Set(x.trim())).length == maxLength );
+                const badWords = words.map( x=> (new Set(x.trim())).size == maxLength );
                 document.getElementById('bad-word').value = badWords.length ? badWords.random() : "Two to Five letters, dumdum";
 
                 return false;
