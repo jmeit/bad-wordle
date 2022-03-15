@@ -91,6 +91,10 @@ textarea {
    Helper classes
    ========================================================================== */
 
+.center {
+  text-align: center;
+}
+
 /*
  * Hide visually and from screen readers
  */
