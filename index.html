@@ -31,11 +31,18 @@
       <label for="word-length">I want a word made from only <input type="number" id="word-length" size="2" value="2"> letters</label>
       <br>
       <input type="submit" value="Give me a bad starting word please">
-      <br>
-      <input type="text" readonly id="bad-word" class="center">
     </form>
 
-    <div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/tpeASME9m853O" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+    <div class="tiles-wrap">
+      <ul class="tiles">
+        <li class="tile" id="letter-0"></li>
+        <li class="tile" id="letter-1"></li>
+        <li class="tile" id="letter-2"></li>
+        <li class="tile" id="letter-3"></li>
+        <li class="tile" id="letter-4"></li>
+      </ul>
+    </div>
+
   </div>
 
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>

@@ -10,7 +10,12 @@ document.addEventListener( 'DOMContentLoaded', function(){
 
                 const maxLength = document.getElementById('word-length').value;
                 const badWords = words.filter( x=> (new Set(x.trim())).size == maxLength );
-                document.getElementById('bad-word').value = badWords.length ? badWords.random() : "Two to Five letters, dumdum";
+                
+                const word = badWords.length ? badWords.random() : "     ";
+                for( let i=0; i<5; i++ )
+                {
+                    document.getElementById(`letter-${i}`).innerHTML = word[i];
+                }
 
                 return false;
             },
