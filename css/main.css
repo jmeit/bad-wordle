@@ -93,12 +93,37 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+#title {
+  border-bottom: 1px solid #4A4A4A;
+}
+
+#submit {
+  background: #e5c460;
+  border: 0;
+  padding: 1em;
+  border-radius: 1em;
+  font-weight: bold;
+  margin: 1em;
+}
+
+.tiles {
+  padding: 0;
+}
 .tile {
   border: 2px solid #565758;
   font-weight: 700;
   font-size: 2rem;
-  margin: 2px;
-  padding: 10px;
+  margin: 0px;
+  padding: 0.7rem;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 3.8rem;
+  height: 3.8rem;
+  vertical-align: middle;
+  text-align: center;
+  text-transform: capitalize;
+  background: #121213;
+  line-height: 1em;
 }
 
 /* ==========================================================================
