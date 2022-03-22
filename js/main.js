@@ -42,18 +42,32 @@ document.addEventListener( 'DOMContentLoaded', function(){
     {
         const ltrEl = letterEls[i];
         ltrEl.addEventListener(
-            'input',
+            'keyup',
             function( e ){
-                if( !e.data ) return;
+                const keys = {
+                    backspace: 8
+                };
 
-                this.value = e.data.substr(0,1);
-                if( letterEls[i+1] )
+                if( e.keyCode == keys.backspace && letterEls[i-1] )
                 {
-                    letterEls[i+1].focus();
+                    letterEls[i-1].focus();
                 }
             },
             false
         );
+        ltrEl.addEventListener(
+                'input',
+                function( e ){
+                    if( !e.data || e.data.trim().length != 1 ) return;
+
+                    this.value = e.data.substr(0,1);
+                    if( letterEls[i+1] )
+                    {
+                        letterEls[i+1].focus();
+                    }
+                },
+                false
+            );
     }
     
     document.getElementById('word-length-form')
@@ -124,10 +138,20 @@ document.addEventListener( 'DOMContentLoaded', function(){
                 const possibleWords = words.filter( x=> x.search( new RegExp( regexSearcherStr ) ) != -1 );
                 
                 const pwEl = document.getElementById(`possible-words`);
-                pwEl.value = possibleWords.join('\n');
+                const maxWords = 20;
+                if( possibleWords.length < 1 )
+                {
+                    pwEl.value = `No words found.`;
+                }
+                else if( possibleWords.length > maxWords ){
+                    pwEl.value = `More than ${maxWords} words found.\nTry another guess to isolate the possible answers.`;
+                }
+                else
+                {
+                    pwEl.value = possibleWords.join('\n');
+                }
                 pwEl.style.height = "";
                 pwEl.style.height = pwEl.scrollHeight + "px";
-
 
                 return false;
             },
@@ -157,7 +181,7 @@ function resetBoard()
         } );
 
     document.getElementById(`possible-words`)
-        .value = "Results:";
+        .value = "";
 
     document.getElementById(`possible-words`)
         .style.height = "";

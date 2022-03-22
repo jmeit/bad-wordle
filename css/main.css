@@ -110,6 +110,13 @@ body {
   background: #ac8b9f;
 }
 
+#possible-words {
+  display: block;
+  margin: 0 auto;
+  max-height: 10em;
+  overflow: auto;
+}
+
 .tiles {
   padding: 0;
   margin: 1.3rem auto;
@@ -157,6 +164,7 @@ body {
 }
 .status-selector {
   float: left;
+  -webkit-appearance: none;
   appearance: none;
   width: 33%;
   height: 1rem;
