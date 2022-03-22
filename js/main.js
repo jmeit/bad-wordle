@@ -123,7 +123,11 @@ document.addEventListener( 'DOMContentLoaded', function(){
 
                 const possibleWords = words.filter( x=> x.search( new RegExp( regexSearcherStr ) ) != -1 );
                 
-                document.getElementById(`possible-words`).value = possibleWords.join('\n');
+                const pwEl = document.getElementById(`possible-words`);
+                pwEl.value = possibleWords.join('\n');
+                pwEl.style.height = "";
+                pwEl.style.height = pwEl.scrollHeight + "px";
+
 
                 return false;
             },
@@ -152,7 +156,11 @@ function resetBoard()
             ltrEl.dataset.status = "exclude"
         } );
 
-        document.getElementById(`possible-words`).value = "";
+    document.getElementById(`possible-words`)
+        .value = "";
+
+    document.getElementById(`possible-words`)
+        .style.height = "";
 }
 
 Array.prototype.random = function() {

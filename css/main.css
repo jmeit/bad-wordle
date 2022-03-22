@@ -97,17 +97,22 @@ body {
   border-bottom: 1px solid #4A4A4A;
 }
 
+#reset,
 #submit {
-  background: #e5c460;
+  background: #7fe560;
   border: 0;
   padding: 1em;
   border-radius: 1em;
   font-weight: bold;
   margin: 1em;
 }
+#reset {
+  background: #ac8b9f;
+}
 
 .tiles {
   padding: 0;
+  margin: 1.3rem auto;
 }
 .tile {
   border: 2px solid #565758;
@@ -145,21 +150,25 @@ body {
 
 .status-selector-wrap {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%
+  top: -1.1rem;
+  left: -2px;
+  width: 100%;
+  border: 2px solid #565758;
 }
 .status-selector {
   float: left;
+  appearance: none;
+  width: 33%;
+  height: 1rem;
 }
 .status-selector[value=found] {
-  accent-color: rgb(83, 141, 78);
+  background-color: rgb(83, 141, 78);
 }
 .status-selector[value=lost] {
-  accent-color: rgb(181, 159, 59);
+  background-color: rgb(181, 159, 59);
 }
 .status-selector[value=exclude] {
-  accent-color: grey;
+  background-color: grey;
 }
 
 /* ==========================================================================
