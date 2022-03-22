@@ -157,7 +157,7 @@ function resetBoard()
         } );
 
     document.getElementById(`possible-words`)
-        .value = "";
+        .value = "Results:";
 
     document.getElementById(`possible-words`)
         .style.height = "";
