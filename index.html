@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>Wordle Solver</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -24,22 +24,57 @@
 
 <body>
 
-  <h1 id="title" class="center">Bad Wordle</h1>
+  <h1 id="title" class="center">Wordle Solver</h1>
 
   <div class="center">
     <form id="word-length-form">
-      <label for="word-length">I want a word made from only <input type="number" id="word-length" size="2" value="2"> letters</label>
-      <br>
-      <input type="submit" id="submit" value="Give me a bad starting word please">
+      <input type="submit" id="submit" value="Solve">
+      <button id="reset" type="button">clear</button>
+      <textarea id="possible-words"></textarea>
     </form>
 
     <div class="tiles-wrap">
-      <ul class="tiles">
-        <li class="tile" id="letter-0"></li>
-        <li class="tile" id="letter-1"></li>
-        <li class="tile" id="letter-2"></li>
-        <li class="tile" id="letter-3"></li>
-        <li class="tile" id="letter-4"></li>
+      <ul class="tiles letters row">
+        <li class="tile">
+          <div class="status-selector-wrap">
+            <input type="radio" class="status-selector" value="exclude">
+            <input type="radio" class="status-selector" value="lost">
+            <input type="radio" class="status-selector" value="found">
+          </div>
+          <input class="letter">
+        </li>
+        <li class="tile">
+          <div class="status-selector-wrap">
+            <input type="radio" class="status-selector" value="exclude">
+            <input type="radio" class="status-selector" value="lost">
+            <input type="radio" class="status-selector" value="found">
+          </div>
+          <input class="letter">
+        </li>
+        <li class="tile">
+          <div class="status-selector-wrap">
+            <input type="radio" class="status-selector" value="exclude">
+            <input type="radio" class="status-selector" value="lost">
+            <input type="radio" class="status-selector" value="found">
+          </div>
+          <input class="letter">
+        </li>
+        <li class="tile">
+          <div class="status-selector-wrap">
+            <input type="radio" class="status-selector" value="exclude">
+            <input type="radio" class="status-selector" value="lost">
+            <input type="radio" class="status-selector" value="found">
+          </div>
+          <input class="letter">
+        </li>
+        <li class="tile">
+          <div class="status-selector-wrap">
+            <input type="radio" class="status-selector" value="exclude">
+            <input type="radio" class="status-selector" value="lost">
+            <input type="radio" class="status-selector" value="found">
+          </div>
+          <input class="letter">
+        </li>
       </ul>
     </div>
 
