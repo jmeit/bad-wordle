@@ -135,7 +135,7 @@ document.addEventListener( 'DOMContentLoaded', function(){
 
                 regexSearcherStr += '$';
 
-                const possibleWords = words.filter( x=> x.search( new RegExp( regexSearcherStr ) ) != -1 );
+                const possibleWords = words.filter( x=> x.search( new RegExp( regexSearcherStr, 'i' ) ) != -1 );
                 
                 const pwEl = document.getElementById(`possible-words`);
                 const maxWords = 20;
